@@ -6,8 +6,7 @@ int main(void) {
     int arr[19];
     int err = 1;
     int ln;
-    int sum1 = 0;
-    int sum2 = 0;
+    int sum = 0;
     int valid = 0;
 
     do{
@@ -30,22 +29,21 @@ int main(void) {
                     if(arr[i]*2 >= 10) {
                         printf("1 + %d ", arr[i]*2%10);
                         if(i != ln-1) printf("+ ");
-                        sum1 += 1 + (arr[i]*2%10);
+                        sum += 1 + (arr[i]*2%10);
                     } else {
                         printf("%d ", arr[i]*2);
                         if(i != ln-1) printf("+ ");
-                        sum1 += arr[i]*2;
+                        sum += arr[i]*2;
                     }
                 } else {
                     printf("%d ", arr[i]);
                     if(i != ln-1) printf("+ ");
-                    sum2 += arr[i];
+                    sum += arr[i];
                 }
             }
 
-            sum1 += sum2;
-            printf("= %d\n", sum1);
-            if(sum1%10 == 0) {
+            printf("= %d\n", sum);
+            if(sum%10 == 0) {
                 valid = 1;
             }
 
